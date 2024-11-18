@@ -1,0 +1,149 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  grid-template-rows: 80px 1fr 60px;
+  grid-template-columns: 1fr;
+  height: 100vh;
+  color: #333;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  background: linear-gradient(120deg, #5cbb6c, #0e5f40);
+  color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header .thumb {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+header h1 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  background-color: #7624d3;
+  padding: 6px 12px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+header a:hover {
+  background-color: #18e1fc;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  overflow-y: auto;
+  background-image: url(imgs/bob_esponja.jpg); 
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+main .message {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 15px;
+  margin: 10px 0;
+  max-width: 70%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+main .message:hover {
+  transform: scale(1.02);
+}
+
+main .message .time {
+  margin-top: 8px;
+  font-style: italic;
+  font-size: 0.85rem;
+  color: #777;
+  border-top: 1px solid #eee;
+  padding-top: 5px;
+}
+
+main .message.owner {
+  background-color: #007bff;
+  color: white;
+  justify-self: end;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #4ad790;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+footer input[type="text"] {
+  width: 85%;
+  padding: 10px;
+  border-radius: 30px;
+  border: 1px solid #3e5ad6;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+footer input[type="text"]:focus {
+  border-color: #7624d3;
+}
+
+footer .bt-voltar {
+  background-color: #7624d3;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+footer .bt-voltar:hover {
+  background-color: #18e1fc;
+}
+
+@media (max-width: 768px) {
+  body {
+    grid-template-rows: 70px 1fr 60px;
+  }
+
+  header h1 {
+    font-size: 1.4rem;
+  }
+
+  main .message {
+    max-width: 90%;
+  }
+
+  footer input[type="text"] {
+    width: 75%;
+  }
+}
